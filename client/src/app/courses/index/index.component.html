@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-sm">
+
+    <div *ngIf="errorMessage" class="alert alert-danger" role="alert">{{errorMessage}}</div>
+    
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Course Code</th>
+        <th>Description</th>
+        <!-- <th width="15%">Action</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of courses">
+        <td width="30%"><a (click)="openModel(content, item)" class="active" href="javascript:void(0)">{{ item.subject_code }}</a></td>
+        <td>{{ item.subject_desc }}</td>
+        <td>
+          <!-- <a (click)="openModel(content, item)" class="btn btn-info">View</a> -->
+        </td>
+      </tr>
+    </tbody>
+    </table>
+
+  </div>
+
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">{{ item.subject_code }} : {{ item.subject_desc }}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+
+    <ul class="list-group">
+      <li class="list-group-item active">Student ID's</li>
+      <li class="list-group-item" *ngFor="let element of item.students">{{element}}</li>
+    </ul>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Close</button>
+  </div>
+</ng-template>
