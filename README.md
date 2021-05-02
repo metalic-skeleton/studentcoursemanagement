@@ -1,6 +1,4 @@
-# studentcoursemanagement
-
-## How to Deploy a Node-Express App on Amazon EC2
+## How to Deploy a Student Course Management App on Amazon EC2
 
 The purpose of this repository is to demonstrate how to deploy studentcoursemanagement application 
 built by Express - Node.js web application framework on Amazon EC2  
@@ -29,15 +27,15 @@ application.
 ### install express Fast, unopinionated, minimalist web framework for Node.js
 	$ npm install express --save
 
-### There are two different ways to build, deploy the application.
+## There are two different ways to build, deploy the application.
 
-## Process 1: Set up a Continuous Deployment Pipeline using AWS CodePipeline and deploy project
+### Process 1: Set up a Continuous Deployment Pipeline using AWS CodePipeline and deploy project
 
-Step 1: Create a deployment environment
+#### Step 1: Create a deployment environment
 Continuous deployment pipeline will need a target environment containing virtual servers, or Amazon EC2 instances, 
 where it will deploy project code. We will prepare this environment before creating the pipeline.
 
-Step 2: Create the pipeline
+#### Step 2: Create the pipeline
 In this step, We will create and configure a simple pipeline with two actions: source and deploy. 
 You will provide CodePipeline with the locations of the source repository and deployment environment.
 
@@ -52,14 +50,14 @@ Environment name:  Default-Environment.
 
 Please select the role in the Service Role page create Role which is created earlier.
 
-Step 3: Activate the pipeline to deploy source code
+#### Step 3: Activate the pipeline to deploy source code
 In this step, let's lunch the pipe line Once the pipeline has been created, it will start to run automatically. 
 First, it detects the project source code in the source location, bundles up the files, 
 and then move them to the second stage. 
 During this stage, it passes the code to Elastic Beanstalk, which contains the EC2 instance that will host the source code. 
 Elastic Beanstalk handles deploying the code to the EC2 instance.
 
-## Process 2: Deploy the code manually.
+### Process 2: Deploy the code manually.
 
 ### Install Git on your Amazon EC2 Instance by running below commands :
 
