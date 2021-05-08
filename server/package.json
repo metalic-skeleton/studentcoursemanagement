@@ -8,10 +8,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "avtaniket",
+    "metalic.skeleton",
     "nodejs"
   ],
-  "author": "avtaniket",
+  "author": "r.amin",
   "license": "ISC",
   "dependencies": {
     "aws-sdk": "^2.897.0",
